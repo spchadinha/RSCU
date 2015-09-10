@@ -1,0 +1,255 @@
+>106501:Synanthedon exitiosa: 1
+    Amino Acid: A  Count: 10
+    Codon Usage: GCA : 3  GCC : 3  GCG : 1  GCU : 3  
+    RSCU Values: GCA : 1.2  GCC : 1.2  GCG : 0.4  GCU : 1.2  
+
+    Amino Acid: C  Count: 6
+    Codon Usage: UGC : 2  UGU : 4  
+    RSCU Values: UGC : 0.666666666667  UGU : 1.33333333333  
+
+    Amino Acid: E  Count: 11
+    Codon Usage: GAA : 6  GAG : 5  
+    RSCU Values: GAA : 1.09090909091  GAG : 0.909090909091  
+
+    Amino Acid: D  Count: 16
+    Codon Usage: GAC : 8  GAU : 8  
+    RSCU Values: GAC : 1.0  GAU : 1.0  
+
+    Amino Acid: G  Count: 6
+    Codon Usage: GGA : 4  GGC : 1  GGG : 0  GGU : 1  
+    RSCU Values: GGA : 2.66666666667  GGC : 0.666666666667  GGG : 0.0  GGU : 0.666666666667  
+
+    Amino Acid: F  Count: 7
+    Codon Usage: UUC : 6  UUU : 1  
+    RSCU Values: UUC : 1.71428571429  UUU : 0.285714285714  
+
+    Amino Acid: I  Count: 6
+    Codon Usage: AUA : 2  AUC : 1  AUU : 3  
+    RSCU Values: AUA : 1.0  AUC : 0.5  AUU : 1.5  
+
+    Amino Acid: H  Count: 5
+    Codon Usage: CAC : 4  CAU : 1  
+    RSCU Values: CAC : 1.6  CAU : 0.4  
+
+    Amino Acid: K  Count: 15
+    Codon Usage: AAA : 9  AAG : 6  
+    RSCU Values: AAA : 1.2  AAG : 0.8  
+
+    Amino Acid: *  Count: 1
+    Codon Usage: UAA : 1  UAG : 0  UGA : 0  
+    RSCU Values: UAA : 3.0  UAG : 0.0  UGA : 0.0  
+
+    Amino Acid: M  Count: 11
+    Codon Usage: AUG : 11  
+    RSCU Values: AUG : 1.0  
+
+    Amino Acid: L  Count: 17
+    Codon Usage: CUA : 1  CUC : 2  CUG : 6  CUU : 1  UUA : 2  UUG : 5  
+    RSCU Values: CUA : 0.352941176471  CUC : 0.705882352941  CUG : 2.11764705882  CUU : 0.352941176471  UUA : 0.705882352941  UUG : 1.76470588235  
+
+    Amino Acid: N  Count: 11
+    Codon Usage: AAC : 5  AAU : 6  
+    RSCU Values: AAC : 0.909090909091  AAU : 1.09090909091  
+
+    Amino Acid: Q  Count: 3
+    Codon Usage: CAA : 1  CAG : 2  
+    RSCU Values: CAA : 0.666666666667  CAG : 1.33333333333  
+
+    Amino Acid: P  Count: 6
+    Codon Usage: CAA : 1  CCC : 1  CCG : 2  CCU : 2  
+    RSCU Values: CAA : 0.666666666667  CCC : 0.666666666667  CCG : 1.33333333333  CCU : 1.33333333333  
+
+    Amino Acid: S  Count: 7
+    Codon Usage: UAC : 1  UCC : 2  UCG : 0  UCU : 2  
+    RSCU Values: UAC : 0.666666666667  UCC : 1.6  UCG : 0.0  UCU : 1.6  
+
+    Amino Acid: R  Count: 1
+    Codon Usage: CGG : 0  CGU : 0  CGA : 0  CGC : 0  
+    RSCU Values: CGG : 0  CGU : 0  CGA : 0  CGC : 0  
+
+    Amino Acid: T  Count: 5
+    Codon Usage: ACA : 1  ACC : 1  ACG : 2  ACU : 1  
+    RSCU Values: ACA : 0.8  ACC : 0.8  ACG : 1.6  ACU : 0.8  
+
+    Amino Acid: W  Count: 2
+    Codon Usage: UGG : 2  
+    RSCU Values: UGG : 1.0  
+
+    Amino Acid: V  Count: 13
+    Codon Usage: GUA : 2  GUC : 3  GUG : 5  GUU : 3  
+    RSCU Values: GUA : 0.615384615385  GUC : 0.923076923077  GUG : 1.53846153846  GUU : 0.923076923077  
+
+    Amino Acid: Y  Count: 3
+    Codon Usage: UAC : 1  UAU : 2  
+    RSCU Values: UAC : 0.666666666667  UAU : 1.33333333333  
+
+>114634:Nasutitermes exitiosus: 4
+    Amino Acid: A  Count: 66
+    Codon Usage: GCA : 28  GCC : 10  GCG : 8  GCU : 20  
+    RSCU Values: GCA : 1.69696969697  GCC : 0.606060606061  GCG : 0.484848484848  GCU : 1.21212121212  
+
+    Amino Acid: C  Count: 25
+    Codon Usage: UGC : 16  UGU : 9  
+    RSCU Values: UGC : 1.28  UGU : 0.72  
+
+    Amino Acid: E  Count: 37
+    Codon Usage: GAA : 18  GAG : 19  
+    RSCU Values: GAA : 0.972972972973  GAG : 1.02702702703  
+
+    Amino Acid: D  Count: 49
+    Codon Usage: GAC : 29  GAU : 20  
+    RSCU Values: GAC : 1.18367346939  GAU : 0.816326530612  
+
+    Amino Acid: G  Count: 83
+    Codon Usage: GGA : 30  GGC : 19  GGG : 12  GGU : 22  
+    RSCU Values: GGA : 1.44578313253  GGC : 0.915662650602  GGG : 0.578313253012  GGU : 1.06024096386  
+
+    Amino Acid: F  Count: 57
+    Codon Usage: UUC : 39  UUU : 18  
+    RSCU Values: UUC : 1.36842105263  UUU : 0.631578947368  
+
+    Amino Acid: I  Count: 43
+    Codon Usage: AUA : 10  AUC : 17  AUU : 16  
+    RSCU Values: AUA : 0.697674418605  AUC : 1.18604651163  AUU : 1.11627906977  
+
+    Amino Acid: H  Count: 15
+    Codon Usage: CAC : 5  CAU : 10  
+    RSCU Values: CAC : 0.666666666667  CAU : 1.33333333333  
+
+    Amino Acid: K  Count: 25
+    Codon Usage: AAA : 14  AAG : 11  
+    RSCU Values: AAA : 1.12  AAG : 0.88  
+
+    Amino Acid: *  Count: 4
+    Codon Usage: UAA : 2  UAG : 2  UGA : 0  
+    RSCU Values: UAA : 1.5  UAG : 1.5  UGA : 0.0  
+
+    Amino Acid: M  Count: 13
+    Codon Usage: AUG : 13  
+    RSCU Values: AUG : 1.0  
+
+    Amino Acid: L  Count: 60
+    Codon Usage: CUA : 3  CUC : 16  CUG : 21  CUU : 7  UUA : 4  UUG : 9  
+    RSCU Values: CUA : 0.3  CUC : 1.6  CUG : 2.1  CUU : 0.7  UUA : 0.4  UUG : 0.9  
+
+    Amino Acid: N  Count: 62
+    Codon Usage: AAC : 36  AAU : 26  
+    RSCU Values: AAC : 1.16129032258  AAU : 0.838709677419  
+
+    Amino Acid: Q  Count: 32
+    Codon Usage: CAA : 16  CAG : 16  
+    RSCU Values: CAA : 1.0  CAG : 1.0  
+
+    Amino Acid: P  Count: 50
+    Codon Usage: CAA : 16  CCC : 7  CCG : 6  CCU : 11  
+    RSCU Values: CAA : 1.0  CCC : 0.7  CCG : 0.6  CCU : 1.1  
+
+    Amino Acid: S  Count: 51
+    Codon Usage: UAC : 18  UCC : 8  UCG : 7  UCU : 11  
+    RSCU Values: UAC : 1.24137931034  UCC : 0.727272727273  UCG : 0.636363636364  UCU : 1.0  
+
+    Amino Acid: R  Count: 41
+    Codon Usage: CGG : 5  CGU : 4  CGA : 5  CGC : 6  
+    RSCU Values: CGG : 1.0  CGU : 0.8  CGA : 1.0  CGC : 1.2  
+
+    Amino Acid: T  Count: 54
+    Codon Usage: ACA : 19  ACC : 4  ACG : 10  ACU : 21  
+    RSCU Values: ACA : 1.40740740741  ACC : 0.296296296296  ACG : 0.740740740741  ACU : 1.55555555556  
+
+    Amino Acid: W  Count: 34
+    Codon Usage: UGG : 34  
+    RSCU Values: UGG : 1.0  
+
+    Amino Acid: V  Count: 50
+    Codon Usage: GUA : 6  GUC : 14  GUG : 19  GUU : 11  
+    RSCU Values: GUA : 0.48  GUC : 1.12  GUG : 1.52  GUU : 0.88  
+
+    Amino Acid: Y  Count: 29
+    Codon Usage: UAC : 18  UAU : 11  
+    RSCU Values: UAC : 1.24137931034  UAU : 0.758620689655  
+
+>283105.chloroplast:chloroplast Antidesma alexiteria: 1
+    Amino Acid: A  Count: 11
+    Codon Usage: GCA : 2  GCC : 2  GCG : 1  GCU : 6  
+    RSCU Values: GCA : 0.727272727273  GCC : 0.727272727273  GCG : 0.363636363636  GCU : 2.18181818182  
+
+    Amino Acid: C  Count: 8
+    Codon Usage: UGC : 2  UGU : 6  
+    RSCU Values: UGC : 0.5  UGU : 1.5  
+
+    Amino Acid: E  Count: 26
+    Codon Usage: GAA : 18  GAG : 8  
+    RSCU Values: GAA : 1.38461538462  GAG : 0.615384615385  
+
+    Amino Acid: D  Count: 16
+    Codon Usage: GAC : 3  GAU : 13  
+    RSCU Values: GAC : 0.375  GAU : 1.625  
+
+    Amino Acid: G  Count: 11
+    Codon Usage: GGA : 4  GGC : 1  GGG : 1  GGU : 5  
+    RSCU Values: GGA : 1.45454545455  GGC : 0.363636363636  GGG : 0.363636363636  GGU : 1.81818181818  
+
+    Amino Acid: F  Count: 43
+    Codon Usage: UUC : 5  UUU : 38  
+    RSCU Values: UUC : 0.232558139535  UUU : 1.76744186047  
+
+    Amino Acid: I  Count: 49
+    Codon Usage: AUA : 12  AUC : 12  AUU : 25  
+    RSCU Values: AUA : 0.734693877551  AUC : 0.734693877551  AUU : 1.5306122449  
+
+    Amino Acid: H  Count: 19
+    Codon Usage: CAC : 2  CAU : 17  
+    RSCU Values: CAC : 0.210526315789  CAU : 1.78947368421  
+
+    Amino Acid: K  Count: 32
+    Codon Usage: AAA : 25  AAG : 7  
+    RSCU Values: AAA : 1.5625  AAG : 0.4375  
+
+    Amino Acid: *  Count: 1
+    Codon Usage: UAA : 0  UAG : 0  UGA : 1  
+    RSCU Values: UAA : 0.0  UAG : 0.0  UGA : 3.0  
+
+    Amino Acid: M  Count: 7
+    Codon Usage: AUG : 7  
+    RSCU Values: AUG : 1.0  
+
+    Amino Acid: L  Count: 72
+    Codon Usage: CUA : 13  CUC : 3  CUG : 6  CUU : 13  UUA : 19  UUG : 18  
+    RSCU Values: CUA : 1.08333333333  CUC : 0.25  CUG : 0.5  CUU : 1.08333333333  UUA : 1.58333333333  UUG : 1.5  
+
+    Amino Acid: N  Count: 30
+    Codon Usage: AAC : 8  AAU : 22  
+    RSCU Values: AAC : 0.533333333333  AAU : 1.46666666667  
+
+    Amino Acid: Q  Count: 12
+    Codon Usage: CAA : 10  CAG : 2  
+    RSCU Values: CAA : 1.66666666667  CAG : 0.333333333333  
+
+    Amino Acid: P  Count: 16
+    Codon Usage: CAA : 10  CCC : 2  CCG : 2  CCU : 6  
+    RSCU Values: CAA : 1.66666666667  CCC : 0.4  CCG : 0.4  CCU : 1.2  
+
+    Amino Acid: S  Count: 50
+    Codon Usage: UAC : 4  UCC : 5  UCG : 3  UCU : 20  
+    RSCU Values: UAC : 0.285714285714  UCC : 0.625  UCG : 0.375  UCU : 2.5  
+
+    Amino Acid: R  Count: 42
+    Codon Usage: CGG : 5  CGU : 4  CGA : 16  CGC : 2  
+    RSCU Values: CGG : 0.740740740741  CGU : 0.592592592593  CGA : 2.37037037037  CGC : 0.296296296296  
+
+    Amino Acid: T  Count: 14
+    Codon Usage: ACA : 5  ACC : 0  ACG : 4  ACU : 5  
+    RSCU Values: ACA : 1.42857142857  ACC : 0.0  ACG : 1.14285714286  ACU : 1.42857142857  
+
+    Amino Acid: W  Count: 8
+    Codon Usage: UGG : 8  
+    RSCU Values: UGG : 1.0  
+
+    Amino Acid: V  Count: 21
+    Codon Usage: GUA : 7  GUC : 4  GUG : 6  GUU : 4  
+    RSCU Values: GUA : 1.33333333333  GUC : 0.761904761905  GUG : 1.14285714286  GUU : 0.761904761905  
+
+    Amino Acid: Y  Count: 28
+    Codon Usage: UAC : 4  UAU : 24  
+    RSCU Values: UAC : 0.285714285714  UAU : 1.71428571429  
+
