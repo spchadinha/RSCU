@@ -9,10 +9,11 @@ def make_usage_table(filename):
 		for line in infile:
 			if ">" in line:
 				outfile.write(line)
+				headers.append(line)
 			elif len(line) < 5:
 				pass
 			else:
-				x = Codon_Table(line)
+				x = Codon_Table(headers[len(headers)-1], line)
 				all_tables.append(x)
 				outfile.write(str(x))
 		return all_tables
@@ -74,8 +75,10 @@ please try another search or type 'exit' to quit.\n")
 Press the 'r' key to see codon count and RSCU values for each match \
 to your keyword.\nPress the 'c' key to compare two sequences' RSCU values \
 (input must be sequence's numeric coding, found by chosing the 'f' option).\nPress \
-the 's' key to try another search.\nType 'exit' to end the session.\n")
+the 's' key to try another search.\nPress 'a' to calculate the CAI for an individual sequence.\n\
+Type 'exit' to end the session.\n")
 
+		print 
 		if userinput == 'r':
 			subprocess.call(["open", "rscu_score.txt"])
 		elif userinput == 'f':
@@ -83,7 +86,10 @@ the 's' key to try another search.\nType 'exit' to end the session.\n")
 		elif userinput == 'c':
 			one = input('Please input the first table\'s index: ')
 			two = input('Please input the second table\'s index: ')
-			tables[one-1].compare(tables[two-1])
+			try:
+				tables[one-1].compare(tables[two-1])
+			except IndexError:
+				print "One of the sequences numbers you selected does not exist in the list!"
 		elif userinput == 's':
 			newsearch = raw_input("Please input the keyword you would like to search: ")
 			results = find_org(newsearch)
@@ -96,6 +102,15 @@ please try another search or type 'exit' to quit.\n")
 
 			tables = make_usage_table('found_codons.txt')
 			# subprocess.call(["open", "findings.txt"])
+		elif userinput == 'a':
+			indiv = input("Please select which sequence to calculate CAI: ")
+			indiv -= 1
+			cai = tables[indiv].CAI(tables)
+			print cai
+		elif userinput == 'e':
+			indiv = input("Please select which sequence to calculate ENC: ")
+			indiv -= 1
+			print tables[indiv].enc
 		elif userinput == 'exit':
 			print "Thank you for using the RSCU calculation tool!"
 		else:
