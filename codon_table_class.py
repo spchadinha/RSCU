@@ -1,5 +1,6 @@
 
 from scipy.stats import gmean
+import Bio
 
 
 # dictionary that maps single-letter amino acid codes to codons that code for the amino acid
@@ -65,6 +66,7 @@ class Codon_Table():
 		self.rscu_table = self._rscu()
 		# calculate the ENC for the given table
 		self.enc = self._enc_calc()
+		self._comp_analysis()
 
 	def _make_table(self):
 		"""
@@ -208,11 +210,35 @@ class Codon_Table():
 		 + 5/(sum(mean_fk[4])/len(mean_fk[4])) + 3/(sum(mean_fk[6])/len(mean_fk[6]))
 		return enc
 
-	def comp_analysis(self):
+	def _comp_analysis(self):
 		"""
+		Using the codon usage data generates statistics about the composition of the sequence
+		eg. percent A, U, C, and G and other like statistics
+
+		Returns:
 
 		"""
-		pass
+		table = {1:{'A':0, 'U':0, 'C':0, 'G':0}, 2:{'A':0, 'U':0, 'C':0, 'G':0}, 3:{'A':0, 'U':0, 'C':0, 'G':0}}
+		for codon in self.codon_table:
+			count = 1
+			for n in codon:
+				table[count][n] += self.codon_table[codon]
+				count += 1
+		
+		per_comp = {}
+		total = 0.0
+		for i in table:
+			for n in table[i]:
+				if n in per_comp:
+					per_comp[n] += table[i][n]
+					total += table[i][n]
+				else:
+					per_comp[n] = table[i][n]
+					total += table[i][n]
+		for p in per_comp:
+			per_comp[p] = per_comp[p]/total
+		
+
 
 	def __str__(self):
 		"""

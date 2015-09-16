@@ -1,22 +1,6 @@
-1.   >112268:Anopheles minimus: 5
-2.   >123217:Anopheles cracens: 8
-3.   >139723:Anopheles culicifacies: 3
-4.   >180454:Anopheles gambiae str. PEST: 4
-5.   >30066:Anopheles merus: 5
-6.   >30069:Anopheles stephensi: 69
-7.   >325436.mitochondrion:mitochondrion Anopheles splendidus: 1
-8.   >34691:Anopheles quadriannulatus: 15
-9.   >42377.mitochondrion:mitochondrion Anopheles quadrimaculatus A: 12
-10.   >42839:Anopheles aquasalis: 2
-11.   >43151:Anopheles darlingi: 5
-12.   >59163.mitochondrion:mitochondrion Anopheles annularis: 1
-13.   >62324:Anopheles funestus: 2
-14.   >62324.mitochondrion:mitochondrion Anopheles funestus: 12
-15.   >7165:Anopheles gambiae: 782
-16.   >7165.mitochondrion:mitochondrion Anopheles gambiae: 9
-17.   >7166:Anopheles quadrimaculatus: 2
-18.   >7167:Anopheles albimanus: 20
-19.   >7168:Anopheles dirus: 13
-20.   >7173:Anopheles arabiensis: 28
-21.   >74869:Anopheles maculatus: 1
-22.   >74873:Anopheles sinensis: 1
+1.   >128947:Zaire ebolavirus - Gabon: 1
+2.   >186538:Zaire ebolavirus: 66
+3.   >186539:Reston ebolavirus: 22
+4.   >186541:Cote d'Ivoire ebolavirus: 2
+5.   >386032:Reston ebolavirus - Reston: 7
+6.   >386033:Sudan ebolavirus: 16
