@@ -1,7 +1,7 @@
 
 from scipy.stats import gmean
 import math
-# import Bio
+from Bio import SeqIO
 
 
 # dictionary that maps single-letter amino acid codes to codons that code for the amino acid
@@ -69,6 +69,25 @@ class Codon_Table():
 		self.enc = self._enc_calc()
 		# perform nucleotide composition analysis 
 		self._comp_analysis() #self.per_comp, self.pos_comp = 
+
+	def _find_orf(self, fastafile):
+		record = SeqIO.read("NC_005816.fna", "fasta")
+
+		for strand, nuc in [(+1, record.seq), (-1, record.seq.reverse_complement())]:
+			all_coding_seq = ""
+		    for i in xrange(len(nuc)):
+		    	if nuc[i:i+3] == "AUG":
+		    		j = i+3
+		    		gene = nuc[i:i+3]
+		    		while nuc[j:j+3] != "UAG" and nuc[j:j+3] != "UGA" and nuc[j:j+3] != "UAA" and j < len(nuc):
+		    			gene += nuc[j:j+3]
+		    			j += 3
+		    			count += 1
+		    		gene += nuc[j:j+3]
+		    		if len(gene) > 300:
+		    			all_coding_seq += gene
+
+		    print all_coding_seq
 
 
 	def _make_table(self):
