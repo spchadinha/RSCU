@@ -1,6 +1,7 @@
 
 from scipy.stats import gmean
-import Bio
+import math
+# import Bio
 
 
 # dictionary that maps single-letter amino acid codes to codons that code for the amino acid
@@ -66,7 +67,9 @@ class Codon_Table():
 		self.rscu_table = self._rscu()
 		# calculate the ENC for the given table
 		self.enc = self._enc_calc()
-		self._comp_analysis()
+		# perform nucleotide composition analysis 
+		self._comp_analysis() #self.per_comp, self.pos_comp = 
+
 
 	def _make_table(self):
 		"""
@@ -210,6 +213,31 @@ class Codon_Table():
 		 + 5/(sum(mean_fk[4])/len(mean_fk[4])) + 3/(sum(mean_fk[6])/len(mean_fk[6]))
 		return enc
 
+	def host_usage_effect(self, host):
+		"""
+		Estimates the effects of host codon usage on an individual's codon usgae
+
+		Parameters:
+			- host : Codon_Table - list of Codon_Table objects that represent the individual's host(s)
+
+		Returns:
+			- dab : Float - float value between 0.0 and 1.0 representing the host's influence on individual's codon usage
+		"""
+
+		num_sum = 0
+		a_sum = 0
+		b_sum = 0
+
+		for codon in self.rscu_table:
+			if codon_to_aa[codon] != 'M' and codon_to_aa[codon] != 'W' and codon_to_aa[codon] != '*':
+				num_sum += self.rscu_table[codon] * host.rscu_table[codon]
+				a_sum += self.rscu_table[codon]**2
+				b_sum += host.rscu_table[codon]**2
+		rab = num_sum/math.sqrt(a_sum * b_sum)
+		dab = (1-rab)/2
+		return dab
+
+
 	def _comp_analysis(self):
 		"""
 		Using the codon usage data generates statistics about the composition of the sequence
@@ -226,18 +254,38 @@ class Codon_Table():
 				count += 1
 		
 		per_comp = {}
+		pos_comp = {1:{'A':0, 'U':0, 'C':0, 'G':0}, 2:{'A':0, 'U':0, 'C':0, 'G':0}, 3:{'A':0, 'U':0, 'C':0, 'G':0}}
 		total = 0.0
 		for i in table:
+			pos_count = 0.0
 			for n in table[i]:
+				pos_count += table[i][n]
 				if n in per_comp:
 					per_comp[n] += table[i][n]
 					total += table[i][n]
 				else:
 					per_comp[n] = table[i][n]
 					total += table[i][n]
+			for n in pos_comp[i]:
+				pos_comp[i][n] = table[i][n]/pos_count
+
 		for p in per_comp:
 			per_comp[p] = per_comp[p]/total
+
+		# print "Percentage composition"
+		# print per_comp
+		# print "Percent composition of each nucleotied at each position"
+		# print pos_comp
+		# print 
 		
+	def add(self, other):
+		for codon in self.codon_table:
+			self.codon_table[codon] += other.codon_table[codon]
+
+		self.aa_count = self._count_aa()
+		self.rscu_table = self._rscu()
+		self.enc = self._enc_calc()
+
 
 
 	def __str__(self):
@@ -257,6 +305,17 @@ class Codon_Table():
 			string += "\n\n"
 
 		return string 
+
+	def __eq__(self, other):
+		same = True
+		for codon in self.codon_table:
+			if self.codon_table[codon] != other.codon_table[codon]:
+				same = False
+		if self.name != other.name:
+			same = False
+		return same
+
+
 
 
 

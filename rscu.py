@@ -111,6 +111,10 @@ please try another search or type 'exit' to quit.\n")
 			indiv = input("Please select which sequence to calculate ENC: ")
 			indiv -= 1
 			print tables[indiv].enc
+		elif userinput == 'ef':
+			host = input("Please select which sequence is the host: ")
+			virus = input("Please selece the virus sequence: ")
+			print tables[virus-1].host_usage_effect(tables[host-1])
 		elif userinput == 'exit':
 			print "Thank you for using the RSCU calculation tool!"
 		else:
