@@ -70,24 +70,24 @@ class Codon_Table():
 		# perform nucleotide composition analysis 
 		self._comp_analysis() #self.per_comp, self.pos_comp = 
 
-	def _find_orf(self, fastafile):
-		record = SeqIO.read("NC_005816.fna", "fasta")
+	# def _find_orf(self, fastafile):
+	# 	record = SeqIO.read("NC_005816.fna", "fasta")
 
-		for strand, nuc in [(+1, record.seq), (-1, record.seq.reverse_complement())]:
-			all_coding_seq = ""
-		    for i in xrange(len(nuc)):
-		    	if nuc[i:i+3] == "AUG":
-		    		j = i+3
-		    		gene = nuc[i:i+3]
-		    		while nuc[j:j+3] != "UAG" and nuc[j:j+3] != "UGA" and nuc[j:j+3] != "UAA" and j < len(nuc):
-		    			gene += nuc[j:j+3]
-		    			j += 3
-		    			count += 1
-		    		gene += nuc[j:j+3]
-		    		if len(gene) > 300:
-		    			all_coding_seq += gene
+	# 	for strand, nuc in [(+1, record.seq), (-1, record.seq.reverse_complement())]:
+	# 		all_coding_seq = ""
+	# 		for i in xrange(len(nuc)):
+	# 	    	if nuc[i:i+3] == "AUG":
+	# 	    		j = i+3
+	# 	    		gene = nuc[i:i+3]
+	# 	    		while nuc[j:j+3] != "UAG" and nuc[j:j+3] != "UGA" and nuc[j:j+3] != "UAA" and j < len(nuc):
+	# 	    			gene += nuc[j:j+3]
+	# 	    			j += 3
+	# 	    			count += 1
+	# 	    		gene += nuc[j:j+3]
+	# 	    		if len(gene) > 300:
+	# 	    			all_coding_seq += gene
 
-		    print all_coding_seq
+	# 	    #print all_coding_seq
 
 
 	def _make_table(self):
@@ -220,7 +220,13 @@ class Codon_Table():
 				for codon in aa_to_codon[aa]:
 					# use pseudocount to control for the absence of an amino acid family in small sequences
 					accum += ((float(self.codon_table[codon])+1)/(num_aa + len(aa_to_codon[aa])))**2
-				indiv_fk[aa] = (num_aa*accum - 1)/(num_aa - 1)
+
+				if num_aa > 1:
+					indiv_fk[aa] = (num_aa*accum - 1)/(num_aa - 1)
+				elif num_aa == 0:
+					indiv_fk[aa] = 0
+				else:
+					indiv_fk[aa] = (num_aa*accum - 1)/(num_aa)
 		
 		# find the mean of the sums above for each amino acid family
 		mean_fk = {2:[], 3:[], 4:[], 6:[]}
@@ -228,8 +234,24 @@ class Codon_Table():
 			mean_fk[len(aa_to_codon[fk_aa])].append(indiv_fk[fk_aa])
 
 		# compute the ENC from the mean of rscu sums
-		enc = 2 + 9/(sum(mean_fk[2])/len(mean_fk[2])) + 1/(sum(mean_fk[3])/len(mean_fk[3]))\
-		 + 5/(sum(mean_fk[4])/len(mean_fk[4])) + 3/(sum(mean_fk[6])/len(mean_fk[6]))
+		fk2 = float(sum(mean_fk[2]))/len(mean_fk[2])
+		fam2 = 9
+		if fk2 == 0: fam2 = 0
+		else: fam2 /= fk2 
+		fk3 = float(sum(mean_fk[3]))/len(mean_fk[3])
+		fam3 = 1
+		if fk3 == 0: fam3 = 0
+		else: fam3 /= fk3
+		fk4 = float(sum(mean_fk[4]))/len(mean_fk[4])
+		fam4 = 5
+		if fk4 == 0: fam4 = 0
+		else: fam4 /= fk4
+		fk6 = float(sum(mean_fk[6]))/len(mean_fk[6])
+		fam6 = 3
+		if fk6 == 0: fam6 = 0
+		else: fam6 /= fk6
+
+		enc = 2 + fam2 + fam3 + fam4 + fam6
 		return enc
 
 	def host_usage_effect(self, host):

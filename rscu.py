@@ -48,6 +48,12 @@ def find_org(o):
 				
 
 def main():
+
+	one = make_usage_table("GMBV_GML435718_CUDB.txt")
+	two = make_usage_table("GMBV_GML903023_CUDB.txt")
+	thr = make_usage_table("GMBV_MARU10962_CUDB.txt")
+	saved = None 
+
 	print "Welcome to the RSCU calculation tool!"
 	search = raw_input("Please enter the keyword you would like to search: ")
 	print 
@@ -115,6 +121,11 @@ please try another search or type 'exit' to quit.\n")
 			host = input("Please select which sequence is the host: ")
 			virus = input("Please selece the virus sequence: ")
 			print tables[virus-1].host_usage_effect(tables[host-1])
+		elif userinput == 'save':
+			which = input("which entry to save?: ")
+			saved = tables[which]
+		elif userinput == 'gamboa':
+			print one.CAI(saved)
 		elif userinput == 'exit':
 			print "Thank you for using the RSCU calculation tool!"
 		else:

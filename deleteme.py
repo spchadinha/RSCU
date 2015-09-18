@@ -13,52 +13,53 @@ codon_db_order = ['CGA', 'CGC', 'CGG', 'CGU', 'AGA', 'AGG', 'CUA', 'CUC',
 
 def gen_CUDBlike_table(filename):
 
-
-	record = SeqIO.read(filename, "fasta")
-
-	sequence = ''
-	revcomp = ''
-	if 'U' in record.seq:
-		sequence = record.seq
-		revcomp = record.seq.reverse_complement()
-	else:
-		sequence = record.seq.transcribe()
-		revcomp = record.seq.reverse_complement().transcribe()
-
-	all_coding_seq = ""
+	outfile = open(filename[:-4]+"_CUDB.txt", "w")
 	codon_count_list = [0]*len(codon_db_order)
-	for strand, nuc in [(+1, sequence), (-1, revcomp)]:
-	    for i in xrange(len(nuc)):
-	    	if nuc[i:i+3] == "AUG":
-	    		j = i+3
-	    		gene = nuc[i:i+3]
-	    		while nuc[j:j+3] != "UAG" and nuc[j:j+3] != "UGA" and nuc[j:j+3] != "UAA" and j < len(nuc):
-	    			gene += nuc[j:j+3]
-	    			j += 3
-	    		gene += nuc[j:j+3]
-	    		if len(gene) > 300:
-	    			all_coding_seq += gene
+	for record in SeqIO.parse(filename, "fasta"):
 
-	i = 0
-	while i < len(all_coding_seq):
-		codon_count_list[codon_db_order.index(all_coding_seq[i:i+3])] += 1
-		i += 3
-	print codon_count_list
+		sequence = ''
+		revcomp = ''
+		if 'U' in record.seq:
+			sequence = record.seq
+			revcomp = record.seq.reverse_complement()
+		else:
+			sequence = record.seq.transcribe()
+			revcomp = record.seq.reverse_complement().transcribe()
+
+
+
+		all_coding_seq = ""
+		
+		for strand, nuc in [(+1, sequence), (-1, revcomp)]:
+		    for i in xrange(len(nuc)):
+		    	if nuc[i:i+3] == "AUG":
+		    		j = i+3
+		    		gene = nuc[i:i+3]
+		    		while nuc[j:j+3] != "UAG" and nuc[j:j+3] != "UGA" and nuc[j:j+3] != "UAA" and j < len(nuc):
+		    			gene += nuc[j:j+3]
+		    			j += 3
+		    		gene += nuc[j:j+3]
+		    		if len(gene) > 300:
+		    			all_coding_seq += gene
+
+		i = 0
+		while i < len(all_coding_seq):
+			codon_count_list[codon_db_order.index(all_coding_seq[i:i+3])] += 1
+			i += 3
+		
 
 	ugly_string = '    '
 	for count in codon_count_list:
 		ugly_string += str(count) + ' '
 
-	print ugly_string + 'g'
-	bs = Codon_Table("grrrrr", ugly_string)
-	print bs
+	# bs = Codon_Table(record.id, ugly_string)
+	outfile.write(record.id + "\n")
+	outfile.write(ugly_string[0:-2]+"\n")
 
-	outfile = open("angry.txt", "w")
-	outfile.write(ugly_string[0:-2])
 	outfile.close()
 
 
-gen_CUDBlike_table("NC_005816.fna")
+gen_CUDBlike_table("GMBV_MARU10962.fna")
 
 
 	
